@@ -3,6 +3,8 @@ A simple Facebook Client for WebOS! (Works August 2019)
 
 Created by John Spahr. MIT Liscense.
 
+### Testing
+This application was tested on a Palm Pre running WebOS 1.4.5.
 ### Support
 My email: tectra.systems@gmail.com.
 
