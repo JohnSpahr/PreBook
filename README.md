@@ -1,7 +1,7 @@
 # PreBook
 A simple Facebook Client for WebOS! (Works May 2020)
 
-Created by John Spahr. Available under the MIT Liscense.
+Created by John Spahr. Available under the MIT License.
 
 ### Install Instructions
 1. Download PreBook and install it on your device using the [WebOS Quick Install Utility](https://github.com/JayCanuck/webos-quick-install/releases).
