@@ -19,4 +19,4 @@ You can watch PreBook's demostration video here: [Video Demo](https://youtu.be/p
 My email: tectra.systems@gmail.com.
 
 ### My Website
-Find more of my WebOS shenanigans at [webOS Apps](https://tectrasystems.org/webos-apps).
+Find more of my WebOS apps [here](https://tectrasystems.org/webos-apps).
