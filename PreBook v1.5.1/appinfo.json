@@ -1,6 +1,6 @@
 {
     "id": "org.tectrasystems.prebook",
-    "version": "1.5.0",
+    "version": "1.5.1",
     "vendor": "John Spahr/Tectra Systems",
     "type": "web",
     "main": "index.html",
