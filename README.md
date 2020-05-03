@@ -13,7 +13,7 @@ Created by John Spahr. Available under the MIT License.
 This application was tested on a Palm Pre running WebOS 1.4.5.
 
 ### Support
-My email: tectra.systems@gmail.com.
+Send me [an email](mailto:tectra.systems@gmail.com).
 
 ### Screenshots
 ![Profile](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/profile.png?raw=true) ![Menu](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/menu%201.png?raw=true)
