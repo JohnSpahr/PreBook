@@ -45,8 +45,8 @@ FirstAssistant.prototype.setup = function() {
     );
 
     //when header is pressed
-    this.handleButton1 = this.handleButtonPress1.bindAsEventListener(this);
-    Mojo.Event.listen(this.controller.get("homeBtn"), Mojo.Event.tap, this.handleButton1);
+    this.handleHeader = this.handleHeaderPress.bindAsEventListener(this);
+    Mojo.Event.listen(this.controller.get("homeBtn"), Mojo.Event.tap, this.handleHeader);
 
     //when loading starts
     this.loadStartHandler = this.handleStartLoading.bindAsEventListener(this);
@@ -96,7 +96,7 @@ FirstAssistant.prototype.cleanup = function(event) {
 
 };
 
-FirstAssistant.prototype.handleButtonPress1 = function(event) {
+FirstAssistant.prototype.handleHeaderPress = function(event) {
     this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/"); //loads basic version of Facebook
 };
 
