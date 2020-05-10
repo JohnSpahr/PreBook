@@ -8,6 +8,7 @@ FirstAssistant.prototype.setup = function() {
         minFontSize: 16
     };
 
+    //initialize browser
     this.controller.setupWidget('browser', this.browserAtt, this.model);
 
     this.commandMenuModel = {
