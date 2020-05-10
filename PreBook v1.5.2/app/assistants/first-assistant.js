@@ -102,12 +102,14 @@ FirstAssistant.prototype.handleButtonPress1 = function(event) {
 
 FirstAssistant.prototype.handleStartLoading = function(event) {
     //show loading spinner
+    this.controller.window.PalmSystem.setWindowOrientation("up");
     this.controller.get('loadingSpinner').visible = true;
     this.controller.get('loadingSpinner').mojo.start();
 };
 
 FirstAssistant.prototype.handleStopLoading = function(event) {
     //hide loading spinner
+    this.controller.window.PalmSystem.setWindowOrientation("free");
     this.controller.get('loadingSpinner').visible = false;
     this.controller.get('loadingSpinner').mojo.stop();
 };
