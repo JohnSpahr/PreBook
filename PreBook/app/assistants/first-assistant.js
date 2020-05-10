@@ -181,5 +181,4 @@ FirstAssistant.prototype.handleCommand = function(inEvent) {
             this.controller.get('browser').mojo.openURL("https://mbasic.facebook.com/coronavirus_info"); //COVID-19 Updates
             break;
     }
-
 };
