@@ -5,6 +5,11 @@ function FirstAssistant() {
 FirstAssistant.prototype.setup = function() {
     this.browserAtt = {
         url: "http://mbasic.facebook.com",
+        cacheAdapter: true,
+        setEnableJavaScript: true,
+        setShowClickedLink: true,
+        setBlockPopups: true,
+        setAcceptCookies: true,
         minFontSize: 16
     };
 
