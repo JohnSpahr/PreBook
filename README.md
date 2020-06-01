@@ -1,5 +1,5 @@
 # PreBook
-A simple Facebook Client for WebOS! (Works May 2020)
+A simple Facebook Client for WebOS! (Works June 2020)
 
 Created by John Spahr. Available under the MIT License.
 
