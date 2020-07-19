@@ -1,5 +1,5 @@
 # PreBook
-A simple Facebook Client for webOS! (Works July 2020)
+A simple Facebook Client for Palm/HP webOS! (Works July 2020)
 
 Created by John Spahr. Available under the MIT License.
 
