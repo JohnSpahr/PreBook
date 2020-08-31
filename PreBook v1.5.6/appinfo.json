@@ -1,6 +1,6 @@
 {
     "id": "org.tectrasystems.prebook",
-    "version": "1.5.5",
+    "version": "1.5.6",
     "vendor": "John Spahr/Tectra Systems",
     "type": "web",
     "main": "index.html",
@@ -19,18 +19,8 @@
             },
             {
                 "type": "web",
-                "label": "Twitter Page",
-                "url": "http://twitter.com/systemstectra"
-            },
-            {
-                "type": "web",
-                "label": "Github Page",
+                "label": "GitHub Page",
                 "url": "http://github.com/johnspahr/prebook"
-            },
-            {
-                "type": "web",
-                "label": "Old Tectra Website",
-                "url": "http://sites.google.com/view/tectrasys"
             }
         ]
     }
