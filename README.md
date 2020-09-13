@@ -1,7 +1,7 @@
 # PreBook
-A simple Facebook Client for Palm/HP webOS! (Works August 2020)
+A simple Facebook Client for Palm/HP webOS! (Works September 2020)
 
-Created by John Spahr. Available under the MIT License.
+Created by John Spahr.
 
 ### Install Instructions
 1. Download PreBook and install it on your device using the [webOS Quick Install Utility](https://github.com/JayCanuck/webos-quick-install/releases).
