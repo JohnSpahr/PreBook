@@ -1,5 +1,5 @@
 # PreBook
-A simple Facebook Client for Palm/HP webOS! (Works September 2020)
+A simple Facebook app for Palm/HP webOS! (Works December 2020)
 
 Created by John Spahr.
 
