@@ -12,9 +12,6 @@ Created by John Spahr.
 ### Testing
 This application was tested on a Palm Pre and Pixi Plus, both running webOS 1.4.5.
 
-### Support
-Send me [an email](mailto:tectra.systems@gmail.com).
-
 ### Screenshots
 ![Profile](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/profile.png?raw=true) ![Menu](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/menu%201.png?raw=true)
 
