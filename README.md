@@ -1,7 +1,7 @@
 # PreBook
 A simple Facebook app for Palm/HP webOS! (Works April 2021)
 
-Created by John Spahr.
+Created by [John Spahr](https://github.com/JohnSpahr).
 
 ### Install Instructions
 1. Download PreBook and install it on your device using the [webOS Quick Install Utility](https://github.com/JayCanuck/webos-quick-install/releases).
