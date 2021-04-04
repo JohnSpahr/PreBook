@@ -16,4 +16,4 @@ This application was tested on a Palm Pre and Pixi Plus, both running webOS 1.4.
 ![Profile](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/profile.png?raw=true) ![Menu](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/menu%201.png?raw=true)
 
 ### My Website
-Find more of my webOS apps [here](https://tectrasystems.org/software.html#webos-apps).
+Find more of my webOS apps [here](https://tectrasystems.org/software.html#webos).
