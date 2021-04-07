@@ -1,5 +1,5 @@
 function FirstAssistant() {
-
+    this.updateCheckDone = false;
 }
 
 FirstAssistant.prototype.setup = function() {
@@ -89,10 +89,22 @@ FirstAssistant.prototype.setup = function() {
     };
 
     this.controller.setupWidget(Mojo.Menu.appMenu, this.menuAttr, this.appMenuModel); //set up app menu
+
+    //Updater
+    this.updaterModel = new UpdaterModel();
 };
 
-
-FirstAssistant.prototype.activate = function(event) {};
+FirstAssistant.prototype.activate = function(event) {
+    this.updateCheckDone = true;
+    this.updaterModel.CheckForUpdate("PreBook", function(responseObj) {
+        if (responseObj && responseObj.updateFound) {
+            this.updaterModel.PromptUserForUpdate(function(response) {
+                if (response)
+                    this.updaterModel.InstallUpdate();
+            }.bind(this));
+        }
+    }.bind(this));
+};
 
 FirstAssistant.prototype.deactivate = function(event) {
     Mojo.Event.stopListening(this.controller.get('MyList'), Mojo.Event.listTap, this.tapHandler);
