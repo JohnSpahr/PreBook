@@ -1,17 +1,14 @@
 {
     "id": "org.tectrasystems.prebook",
-    "version": "1.5.6",
-    "vendor": "John Spahr/Tectra Systems",
+    "version": "1.6.0",
+    "vendor": "John Spahr",
     "type": "web",
+    "uiRevision": "2",
     "main": "index.html",
     "title": "PreBook",
     "icon": "images/icon.png",
 
     "support": {
-        "email": {
-            "address": "tectra.systems@gmail.com",
-            "subject": "Support"
-        },
         "resources": [{
                 "type": "web",
                 "label": "Tectra Website",

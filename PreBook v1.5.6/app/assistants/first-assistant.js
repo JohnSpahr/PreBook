@@ -1,5 +1,5 @@
 function FirstAssistant() {
-    this.updateCheckDone = false;
+
 }
 
 FirstAssistant.prototype.setup = function() {
@@ -51,16 +51,13 @@ FirstAssistant.prototype.setup = function() {
     );
 
     //when header is pressed
-    this.handleHeader = this.handleHeaderPress.bindAsEventListener(this);
-    Mojo.Event.listen(this.controller.get("homeBtn"), Mojo.Event.tap, this.handleHeader);
+    Mojo.Event.listen(this.controller.get("homeBtn"), Mojo.Event.tap, this.handleHeaderPress.bind(this));
 
     //when loading starts
-    this.loadStartHandler = this.handleStartLoading.bindAsEventListener(this);
-    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStarted, this.loadStartHandler);
+    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStarted, this.handleStartLoading.bind(this));
 
     //when loading ends
-    this.loadStopHandler = this.handleStopLoading.bindAsEventListener(this);
-    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStopped, this.loadStopHandler);
+    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStopped, this.handleStopLoading.bind(this));
 
     this.appMenuModel = {
         items: [
@@ -89,22 +86,9 @@ FirstAssistant.prototype.setup = function() {
     };
 
     this.controller.setupWidget(Mojo.Menu.appMenu, this.menuAttr, this.appMenuModel); //set up app menu
-
-    //Updater
-    this.updaterModel = new UpdaterModel();
 };
 
-FirstAssistant.prototype.activate = function(event) {
-    this.updateCheckDone = true;
-    this.updaterModel.CheckForUpdate("PreBook", function(responseObj) {
-        if (responseObj && responseObj.updateFound) {
-            this.updaterModel.PromptUserForUpdate(function(response) {
-                if (response)
-                    this.updaterModel.InstallUpdate();
-            }.bind(this));
-        }
-    }.bind(this));
-};
+FirstAssistant.prototype.activate = function(event) {};
 
 FirstAssistant.prototype.deactivate = function(event) {
     Mojo.Event.stopListening(this.controller.get('MyList'), Mojo.Event.listTap, this.tapHandler);
