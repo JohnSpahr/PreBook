@@ -1,8 +1,10 @@
 function FirstAssistant() {
-
+    this.updateCheckDone = false;
 }
 
 FirstAssistant.prototype.setup = function() {
+    this.updaterModel = new UpdaterModel();
+
     this.browserAtt = {
         url: "http://mbasic.facebook.com",
         cacheAdapter: true,
@@ -88,7 +90,17 @@ FirstAssistant.prototype.setup = function() {
     this.controller.setupWidget(Mojo.Menu.appMenu, this.menuAttr, this.appMenuModel); //set up app menu
 };
 
-FirstAssistant.prototype.activate = function(event) {};
+FirstAssistant.prototype.activate = function(event) {
+    this.updateCheckDone = true;
+    this.updaterModel.CheckForUpdate("PreBook", function(responseObj) {
+        if (responseObj && responseObj.updateFound) {
+            this.updaterModel.PromptUserForUpdate(function(response) {
+                if (response)
+                    this.updaterModel.InstallUpdate();
+            }.bind(this));
+        }
+    }.bind(this));
+};
 
 FirstAssistant.prototype.deactivate = function(event) {
     Mojo.Event.stopListening(this.controller.get('MyList'), Mojo.Event.listTap, this.tapHandler);
