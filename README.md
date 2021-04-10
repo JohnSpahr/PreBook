@@ -1,4 +1,6 @@
 # PreBook
+![PreBook Logo](PreBook/images/icon.png)
+
 A simple Facebook app for Palm/HP webOS! (Works April 2021)
 
 - Created by [John Spahr](https://github.com/JohnSpahr).
