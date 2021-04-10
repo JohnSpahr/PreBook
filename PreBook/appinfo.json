@@ -7,7 +7,7 @@
     "main": "index.html",
     "title": "PreBook",
     "icon": "images/icon.png",
-
+    "splashicon": "images/icon-256x256.png",
     "support": {
         "resources": [{
                 "type": "web",
