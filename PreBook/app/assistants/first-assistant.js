@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 ______        ______             _    
 | ___ \       | ___ \           | |   
@@ -11,8 +10,6 @@ ______        ______             _
 Copyright (c) John Spahr 2019-2021
 */
 
-=======
->>>>>>> f6ef18490869095183fd9836ba8862bae8ee6059
 function FirstAssistant() {
     this.updateCheckDone = false;
 }
@@ -20,7 +17,6 @@ function FirstAssistant() {
 FirstAssistant.prototype.setup = function() {
     this.updaterModel = new UpdaterModel();
 
-<<<<<<< HEAD
     //check if first run
     var currVersion = Mojo.Controller.appInfo.version;
     var firstRun = new Mojo.Model.Cookie("firstRun" + currVersion);
@@ -30,8 +26,6 @@ FirstAssistant.prototype.setup = function() {
         Mojo.Controller.stageController.pushScene("second");
     }
 
-=======
->>>>>>> f6ef18490869095183fd9836ba8862bae8ee6059
     this.browserAtt = {
         url: "http://mbasic.facebook.com",
         cacheAdapter: true,
