@@ -2,7 +2,9 @@
 A simple Facebook app for Palm/HP webOS! (Works April 2021)
 
 Created by [John Spahr](https://github.com/JohnSpahr).
-Auto updater and custom headers by [codepoet80](https://github.com/codepoet80)
+
+Auto updater and custom headers by [codepoet80](https://github.com/codepoet80).
+
 Icon by [farhaddad](https://4d-creations.com/).
 
 ### Install Instructions
