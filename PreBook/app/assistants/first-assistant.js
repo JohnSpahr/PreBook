@@ -12,6 +12,7 @@ Copyright (c) John Spahr 2019-2021
 
 function FirstAssistant() {
     this.updateCheckDone = false;
+    this.baseURL = "http://mbasic.facebook.com";    //used everywhere, so setup a variable
 }
 
 FirstAssistant.prototype.setup = function() {
@@ -27,7 +28,7 @@ FirstAssistant.prototype.setup = function() {
     }
 
     this.browserAtt = {
-        url: "http://mbasic.facebook.com",
+        url: this.baseURL,
         cacheAdapter: true,
         setEnableJavaScript: true,
         setShowClickedLink: true,
@@ -39,12 +40,25 @@ FirstAssistant.prototype.setup = function() {
     //initialize browser
     this.controller.setupWidget('browser', this.browserAtt, this.model);
 
-    this.commandMenuModel = {
+    //initialize view (top) menu
+    this.viewMenuModel = {
         items: [{
                 items: [
                     { label: $L('Back'), icon: "back", command: "goBack" },
+                    { label: $L('Home'), width: 200, command: "goHome" },
                     { label: $L('Forward'), icon: "forward", command: "goForward" }
                 ]
+            }
+        ]
+    };
+    this.controller.setupWidget(Mojo.Menu.viewMenu, {}, this.viewMenuModel);
+
+    //initialize command menu
+    this.cmdMenuAttributes = {
+        menuClass: 'no-fade'
+    }
+    this.commandMenuModel = {
+        items: [{
             },
             {
                 items: [
@@ -52,15 +66,12 @@ FirstAssistant.prototype.setup = function() {
                     { items: [{ iconPath: "images/messages.png", command: "myMessages" }] },
                     { items: [{ iconPath: "images/notifications.png", command: "myNotifications" }] }
                 ]
+            }, {
+            
             }
         ]
     };
-
-    this.menuAttr = {
-        omitDefaultItems: true
-    };
-
-    this.controller.setupWidget(Mojo.Menu.commandMenu, undefined, this.commandMenuModel);
+    this.controller.setupWidget(Mojo.Menu.commandMenu, this.cmdMenuAttributes, this.commandMenuModel);
 
     //loadingSpinner
     this.controller.setupWidget("loadingSpinner",
@@ -73,14 +84,10 @@ FirstAssistant.prototype.setup = function() {
         }
     );
 
-    //when header is pressed
-    Mojo.Event.listen(this.controller.get("homeBtn"), Mojo.Event.tap, this.handleHeaderPress.bind(this));
-
-    //when loading starts
-    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStarted, this.handleStartLoading.bind(this));
-
-    //when loading ends
-    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStopped, this.handleStopLoading.bind(this));
+    //setup app menu
+    this.menuAttr = {
+        omitDefaultItems: true
+    };
 
     this.appMenuModel = {
         items: [
@@ -107,8 +114,13 @@ FirstAssistant.prototype.setup = function() {
             Mojo.Menu.helpItem
         ]
     };
-
     this.controller.setupWidget(Mojo.Menu.appMenu, this.menuAttr, this.appMenuModel); //set up app menu
+
+    //when loading starts
+    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStarted, this.handleStartLoading.bind(this));
+
+    //when loading ends
+    Mojo.Event.listen(this.controller.get("browser"), Mojo.Event.webViewLoadStopped, this.handleStopLoading.bind(this));
 };
 
 FirstAssistant.prototype.activate = function(event) {
@@ -135,7 +147,7 @@ FirstAssistant.prototype.handleHeaderPress = function(event) {
     this.controller.showAlertDialog({
         onChoose: function(value) {
             if (value == "yes") {
-                this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/"); //go home
+                this.controller.get('browser').mojo.openURL(this.baseURL); //go home
             }
         },
         title: "Go Home?",
@@ -166,7 +178,7 @@ FirstAssistant.prototype.handleCommand = function(inEvent) {
     switch (inEvent.command) {
 
         case "goHome":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com"); //go home
+            this.handleHeaderPress(inEvent);
             break;
 
         case "goBack":
@@ -182,31 +194,31 @@ FirstAssistant.prototype.handleCommand = function(inEvent) {
             break;
 
         case "myProfile":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/me"); //loads your profile
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/me"); //loads your profile
             break;
 
         case "myMessages":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/messages"); //loads your messages
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/messages"); //loads your messages
             break;
 
         case "myNotifications":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/notifications"); //loads your notifications
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/notifications"); //loads your notifications
             break;
 
         case "myGroups":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/groups"); //loads your groups
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/groups"); //loads your groups
             break;
 
         case "myFriends":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/buddylist"); //loads your friends
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/buddylist"); //loads your friends
             break;
 
         case "pokes":
-            this.controller.get('browser').mojo.openURL("http://mbasic.facebook.com/pokes"); //pokes
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/pokes"); //pokes
             break;
 
         case "findFriends":
-            this.controller.get('browser').mojo.openURL("https://mbasic.facebook.com/friends/center/suggestions/"); //find friends
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/friends/center/suggestions/"); //find friends
             break;
 
         case "whatsNew":
@@ -214,19 +226,19 @@ FirstAssistant.prototype.handleCommand = function(inEvent) {
             break;
 
         case "settings":
-            this.controller.get('browser').mojo.openURL("https://mbasic.facebook.com/settings"); //facebook settings
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/settings"); //facebook settings
             break;
 
         case "pages":
-            this.controller.get('browser').mojo.openURL("https://mbasic.facebook.com/pages"); //facebook pages
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/pages"); //facebook pages
             break;
 
         case "notes":
-            this.controller.get('browser').mojo.openURL("https://mbasic.facebook.com/notes"); //facebook notes
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/notes"); //facebook notes
             break;
 
         case "covidUpdate":
-            this.controller.get('browser').mojo.openURL("https://mbasic.facebook.com/coronavirus_info"); //COVID-19 Updates
+            this.controller.get('browser').mojo.openURL(this.baseURL + "/coronavirus_info"); //COVID-19 Updates
             break;
     }
 };
