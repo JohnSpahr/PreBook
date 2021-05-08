@@ -12,6 +12,7 @@ Copyright (c) John Spahr 2019-2021
 
 .spinnerClass {
     position: fixed;
-    left: 96px;
-    top: 110px;
+    right: 65px;
+    top: 9px;
+    z-index: 100000;
 }

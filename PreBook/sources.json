@@ -1,12 +1,12 @@
 [
     { "source": "app/assistants/stage-assistant.js" },
     {
-        "scenes": "first",
-        "source": "app/assistants/first-assistant.js"
+        "scenes": "main",
+        "source": "app/assistants/main-assistant.js"
     },
     {
-        "scenes": "second",
-        "source": "app/assistants/second-assistant.js"
+        "scenes": "info",
+        "source": "app/assistants/info-assistant.js"
     },
     { "source": "app/models/updater-model.js" }
 ]

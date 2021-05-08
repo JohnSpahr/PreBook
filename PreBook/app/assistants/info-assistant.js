@@ -10,11 +10,14 @@ ______        ______             _
 Copyright (c) John Spahr 2019-2021
 */
 
-function SecondAssistant() {
+function InfoAssistant() {
 
 }
 
-SecondAssistant.prototype.setup = function() {
+InfoAssistant.prototype.setup = function() {
+    this.cmdMenuAttributes = {
+        menuClass: 'no-fade'
+    }
     this.commandMenuModel = {
         items: [{
                 items: []
@@ -30,22 +33,22 @@ SecondAssistant.prototype.setup = function() {
         ]
     };
 
-    this.controller.setupWidget(Mojo.Menu.commandMenu, undefined, this.commandMenuModel);
+    this.controller.setupWidget(Mojo.Menu.commandMenu, this.cmdMenuAttributes, this.commandMenuModel);
 };
 
-SecondAssistant.prototype.activate = function(event) {
-
-};
-
-SecondAssistant.prototype.deactivate = function(event) {
+InfoAssistant.prototype.activate = function(event) {
 
 };
 
-SecondAssistant.prototype.cleanup = function(event) {
+InfoAssistant.prototype.deactivate = function(event) {
 
 };
 
-SecondAssistant.prototype.handleCommand = function(inEvent) {
+InfoAssistant.prototype.cleanup = function(event) {
+
+};
+
+InfoAssistant.prototype.handleCommand = function(inEvent) {
     switch (inEvent.command) {
         case "closeScene":
             //close scene
