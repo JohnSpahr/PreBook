@@ -1,7 +1,7 @@
 # PreBook
 ![PreBook logo by farhaddad](PreBook/images/icon.png)
 
-A simple Facebook app for Palm/HP webOS! (Works in 2021)
+A simple Facebook app for Palm/HP webOS! (Works in 2024)
 
 - Created and maintained by [John Spahr](https://github.com/JohnSpahr).
 - Auto updater, custom headers, and more by [codepoet80](https://github.com/codepoet80).
@@ -17,7 +17,4 @@ A simple Facebook app for Palm/HP webOS! (Works in 2021)
 This application was tested on a Palm Pre and Pixi Plus, both running webOS 1.4.5, as well as a Palm Pre 2 running webOS 2.2.4.
 
 ### Screenshots
-![Profile](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/posts.png?raw=true) ![Menu](https://github.com/JohnSpahr/PreBook/blob/master/Screenshots/messenger.png?raw=true)
-
-### My Website
-Find more of my webOS apps [here](https://tectrasystems.org/software.html#webos).
+![Profile](Screenshots/posts.png) ![Menu](Screenshots/messenger.png)
