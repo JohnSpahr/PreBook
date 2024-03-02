@@ -1,6 +1,6 @@
 {
     "id": "org.tectrasystems.prebook",
-    "version": "1.6.1",
+    "version": "1.7.0",
     "vendor": "John Spahr",
     "type": "web",
     "uiRevision": "2",
@@ -11,8 +11,8 @@
     "support": {
         "resources": [{
                 "type": "web",
-                "label": "Tectra Website",
-                "url": "http://tectrasystems.org"
+                "label": "John's Website",
+                "url": "http://johnspahr.org"
             },
             {
                 "type": "web",
